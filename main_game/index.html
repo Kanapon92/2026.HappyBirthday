@@ -9,16 +9,27 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            /* === 変更点: ゲーム中の背景画像を設定 === */
-            /* background-color: #f0f8ff; ←元の色指定を削除 */
-            background-image: url('game_bg.jpg'); /* ここで画像を指定 */
-            background-size: cover;   /* 画面全体を覆うように表示 */
-            background-position: center; /* 中央寄せ */
-            background-repeat: no-repeat; /* 繰り返さない */
-            /* =================================== */
+            /* 画面全体を覆うための魔法の1行 */
+            width: 100vw;
+            height: 100vh; 
+            
+            background-image: url('game_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* 背景を固定（スクロール防止） */
+            background-attachment: fixed; 
+
             font-family: Arial, sans-serif;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
+        }
+
+        canvas {
+            display: block;
+            /* 背景画像が見えるように、キャンバス自体を透明にする */
+            background: transparent; 
         }
 
         #score-board {
